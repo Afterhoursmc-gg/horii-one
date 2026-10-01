@@ -1,0 +1,28 @@
+# env/secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Python
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.venv/
+*.pyc
+*.egg-info/
+
+# Node/Web
+node_modules/
+dist/
+build/
+
+# Xcode
+DerivedData/
+*.xcuserstate
+xcuserdata/
+
+# OS
+.DS_Store

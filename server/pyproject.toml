@@ -1,0 +1,39 @@
+[project]
+name = "horii-core"
+version = "0.1.0"
+description = "H0RII CORE backend for H0RII ONE"
+requires-python = ">=3.11"
+dependencies = [
+  "fastapi>=0.115.0",
+  "uvicorn[standard]>=0.30.0",
+  "pydantic-settings>=2.4.0",
+  "sqlalchemy>=2.0.30",
+  "alembic>=1.13.2",
+  "psycopg[binary]>=3.2.1",
+  "aiosqlite>=0.20.0",
+  "redis>=5.0.8",
+  "httpx>=0.27.0",
+  "python-json-logger>=2.0.7"
+]
+
+[project.optional-dependencies]
+test = [
+  "pytest>=8.3.0",
+  "pytest-asyncio>=0.23.0",
+  "httpx>=0.27.0"
+]
+
+[build-system]
+requires = ["setuptools>=70", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["app*"]
+exclude = ["tests*", "migrations*"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100

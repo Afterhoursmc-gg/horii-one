@@ -1,0 +1,53 @@
+services:
+  horii-api:
+    build: ./server
+    container_name: horii-core-api
+    env_file:
+      - .env
+    environment:
+      APP_ENV: ${APP_ENV:-development}
+      DATABASE_URL: ${DATABASE_URL:-postgresql+psycopg://horii:horii@postgres:5432/horii_one}
+      REDIS_URL: ${REDIS_URL:-redis://redis:6379/0}
+    ports:
+      - "8000:8000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/api/v1/status').read()"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+  postgres:
+    image: postgres:16-alpine
+    container_name: horii-core-postgres
+    environment:
+      POSTGRES_USER: horii
+      POSTGRES_PASSWORD: horii
+      POSTGRES_DB: horii_one
+    volumes:
+      - horii_postgres:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U horii -d horii_one"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    image: redis:7-alpine
+    container_name: horii-core-redis
+    command: ["redis-server", "--appendonly", "yes"]
+    volumes:
+      - horii_redis:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  horii_postgres:
+  horii_redis:
