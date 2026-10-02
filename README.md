@@ -24,3 +24,10 @@ Milestone 1 currently includes:
 - H0RII ONE chat can register the device, create a conversation and send messages to CORE.
 
 The API client currently defaults to `https://api.horii.dev`; public CORE deployment and a real production URL are still pending. Local end-to-end REST verification is complete.
+
+Realtime milestone:
+
+- Authenticated `/api/v1/realtime` WebSocket endpoint.
+- Server heartbeat/pong protocol.
+- iOS `HoriiWebSocketClient` with reconnect backoff and jitter.
+- Local WebSocket smoke-test verified authenticated connect and heartbeat.

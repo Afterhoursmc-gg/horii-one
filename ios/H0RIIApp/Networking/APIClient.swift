@@ -6,11 +6,13 @@ struct HoriiAPIClient {
     let session: URLSession
     let auth: HoriiAuthManager
 
-    init(
-        environment: AppEnvironment = .current,
-        session: URLSession = .shared,
-        auth: HoriiAuthManager = HoriiAuthManager()
-    ) {
+    init() {
+        self.environment = .current
+        self.session = .shared
+        self.auth = HoriiAuthManager()
+    }
+
+    init(environment: AppEnvironment, session: URLSession, auth: HoriiAuthManager) {
         self.environment = environment
         self.session = session
         self.auth = auth
