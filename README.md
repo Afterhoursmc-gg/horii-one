@@ -11,3 +11,14 @@ Platform modules:
 - `docs/` — architecture, API, realtime, security notes.
 
 Milestone 0 is the backend foundation: monorepo, FastAPI project, status endpoint, config, logging, Docker and tests.
+
+Milestone 1 currently includes:
+
+- Device registration at `POST /api/v1/auth/device`.
+- Hashed bearer tokens with expiration and revocation.
+- Authenticated `GET /api/v1/devices/me`.
+- Conversation creation/listing/history.
+- User message → `MockAIProvider` → stored assistant message.
+- H0RII ONE SwiftUI/Xcode project copied into `ios/`.
+
+The iOS project still needs its `APIClient`/Keychain wiring connected to these endpoints before physical end-to-end iPhone testing.
