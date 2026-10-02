@@ -12,6 +12,7 @@ __pycache__/
 .mypy_cache/
 .venv/
 *.pyc
+*.db
 *.egg-info/
 
 # Node/Web

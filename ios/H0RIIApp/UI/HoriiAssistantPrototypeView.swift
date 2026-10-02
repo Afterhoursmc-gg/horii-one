@@ -15,6 +15,7 @@ struct HoriiAssistantPrototypeView: View {
 
                 stateCard
                 enableButton
+                HoriiCoreChatView()
                 testControls
                 localModelSettings
                 telemetryCard

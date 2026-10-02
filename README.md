@@ -20,5 +20,7 @@ Milestone 1 currently includes:
 - Conversation creation/listing/history.
 - User message → `MockAIProvider` → stored assistant message.
 - H0RII ONE SwiftUI/Xcode project copied into `ios/`.
+- iOS `APIClient`, Keychain credential storage and CORE conversation UI scaffold.
+- H0RII ONE chat can register the device, create a conversation and send messages to CORE.
 
-The iOS project still needs its `APIClient`/Keychain wiring connected to these endpoints before physical end-to-end iPhone testing.
+The API client currently defaults to `https://api.horii.dev`; public CORE deployment and a real production URL are still pending. Local end-to-end REST verification is complete.
