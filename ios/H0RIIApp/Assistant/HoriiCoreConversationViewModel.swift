@@ -12,7 +12,11 @@ final class HoriiCoreConversationViewModel: ObservableObject {
     private let api: HoriiAPIClient
     private var conversationID: String?
 
-    init(api: HoriiAPIClient = HoriiAPIClient()) {
+    init() {
+        self.api = HoriiAPIClient()
+    }
+
+    init(api: HoriiAPIClient) {
         self.api = api
     }
 

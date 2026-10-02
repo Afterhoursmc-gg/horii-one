@@ -12,16 +12,18 @@ final class HoriiWebSocketClient: NSObject, ObservableObject {
     private var reconnectAttempt = 0
     private var shouldReconnect = false
 
-    init() {
+    override init() {
         self.environment = .current
         self.auth = HoriiAuthManager()
         self.session = .shared
+        super.init()
     }
 
     init(environment: AppEnvironment, auth: HoriiAuthManager, session: URLSession) {
         self.environment = environment
         self.auth = auth
         self.session = session
+        super.init()
     }
 
     func connect() {
