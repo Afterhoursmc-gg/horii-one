@@ -84,7 +84,7 @@
 		C00200000000000000000002 /* Core */ = {isa = PBXGroup; children = ( C00300000000000000000001 /* Models */ ); path = Core; sourceTree = "<group>"; };
 		C00300000000000000000001 /* Models */ = {isa = PBXGroup; children = ( C00100000000000000000004 /* HoriiCoreModels.swift */ ); path = Models; sourceTree = "<group>"; };
 		C00200000000000000000003 /* Authentication */ = {isa = PBXGroup; children = ( C00100000000000000000006 /* KeychainStore.swift */, C00100000000000000000008 /* AuthManager.swift */ ); path = Authentication; sourceTree = "<group>"; };
-		C00200000000000000000004 /* Networking */ = {isa = PBXGroup; children = ( C0010000000000000000000A /* APIClient.swift */ ); path = Networking; sourceTree = "<group>"; };
+		C00200000000000000000004 /* Networking */ = {isa = PBXGroup; children = ( C0010000000000000000000A /* APIClient.swift */, C01000000000000000000006 /* WebSocketClient.swift */ ); path = Networking; sourceTree = "<group>"; };
 		C01100000000000000000001 /* Assistant */ = {isa = PBXGroup; children = ( C01000000000000000000002 /* HoriiCoreConversationViewModel.swift */ ); path = Assistant; sourceTree = "<group>"; };
 /* End PBXGroup section */
 
